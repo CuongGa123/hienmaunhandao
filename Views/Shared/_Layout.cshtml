@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:image" content="http://example.com/logo.jpg">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1024">
+    <meta property="og:image:height" content="1024">
+    <title>Phiếu đăng ký</title>
+    @*@Styles.Render("~/Content/css")*@
+    @Styles.Render("~/Style/main.css")
+    @Styles.Render("~/Content/bootstrap.min.css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    @*<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
+            <div class="container">
+                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("About", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    </ul>
+                </div>
+            </div>
+        </nav>*@
+    <div class="banner">
+        <div class="banner-content">
+            @* thêm nội dung cho banner *@
+            <img src="~/Images/banner-background.jpg" style="width: 100%; height: 100%;" />
+        </div>
+    </div>
+    <div class="noidung">
+        <p style="color:red"><b>GIỌT MÁU SẺ CHIA, YÊU THƯƠNG LAN TOẢ</b></p>
+        <p>
+            Hiến máu cứu người là nghĩa cử cao đẹp, được Chính phủ, các tổ chức, cá nhân và toàn thể xã hội quan tâm, tham gia hưởng ứng. Nhằm tri ân những đóng góp vượt bậc của đội ngũ y tế trong thời gian phòng chống đại dịch Covid-19, đồng thời chia sẻ trách nhiệm với cộng đồng, Tập đoàn Bitexco phối hợp với Hội chữ Thập đỏ Việt Nam tổ chức Ngày Hội Hiến máu tình nguyện trên phạm vi cả nước.
+        </p>
+        <p>Lễ phát động Sự kiện <b>“GIỌT MÁU SẺ CHIA, YÊU THƯƠNG LAN TOẢ”</b>được diễn ra với thông tin chi tiết như sau:</p>
+
+        <p>
+            •	Thời gian: 8h00 ngày 10/12/2023
+        </p>
+        <p>
+            •	Địa điểm: Phòng Sale Gallery, Khu đô thị The Manor Central Park, đường Nguyễn Xiển, Hà Nội.
+        </p>
+        <p>
+            Mỗi giọt máu hiến tặng là đóng góp quý báu, có thể mang lại cơ hội sống mới cho người khác. Hiến máu thường xuyên đối với người khoẻ mạnh và theo đúng hướng dẫn giúp cải thiện dòng máu lưu thông, giảm tổn thương thành mạch máu và tắc nghẽn động mạch, không chỉ mang đến những lợi ích về sức khỏe tinh thần mà còn tăng cường thể chất và giúp kéo dài tuổi thọ.
+        </p>
+        <p>
+            Ban Tổ chức rất mong nhận được sự quan tâm và hưởng ứng tham gia từ các bạn. Hãy hành động ngay hôm nay vì sức khoẻ của chúng ta và cộng đồng!
+        </p>
+        <p> Hãy đăng ký để cùng chia sẻ và lan toả yêu thương tới cộng đồng bạn nhé!</p>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        
+            <footer>
+                <div class="footer">
+                    <span class="footer-text"> © Santa Run 2023.</span>
+                    <span class="footer-text">Mọi sự sao chép phải được sự đồng ý của Bitexco Group</span>
+                </div>
+            </footer>
+    </div>
+
+    @Scripts.Render("~/Scripts/jquery-3.4.1.min.js")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

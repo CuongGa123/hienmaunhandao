@@ -1,0 +1,382 @@
+﻿@model List<BloodDonation.Context.Workplace>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-xl-8 m-auto boxlonhienmau">
+            <form action="" id="guihienmau" class="row">
+                <div class="thongtindangky"> <b> THÔNG TIN ĐĂNG KÝ </b></div>
+                <div class="col-sm-12 mb-3">
+                    <label for=""><b>Đơn vị/Khu đô thị</b></label>
+                    <sup class="red">*</sup>
+                </div>
+                <div class="box-workplace workplace mb-3 col-sm-12 quantrong col-sm-12">
+                    <select id="Workplace" name="Workplace" class="form-control">
+                        <option value="0">Chọn đơn vị/Khu đô thị</option>
+                        @for(int i = 0; i < ViewBag.Workplaces.Count; i++) { 
+                            <option value="@ViewBag.Workplaces[i].Id">@ViewBag.Workplaces[i].Name</option>
+                        }
+                    </select>
+                </div>
+
+                <div class="col-sm-12 mb-3">
+                    <label for=""><b>Thông tin cá nhân</b></label>
+                </div>
+                <div class="box-hoten mb-3 col-sm-12 quantrong col-sm-12">
+                    <input id="FullName" type="text" name="Hoten" class="form-control" style="width: 100%;" placeholder="Nhập họ và tên">
+                    <sup class="red">*</sup>
+                </div>
+
+                <div class="box-namsinh mb-3 quantrong col-sm-6">
+                    <sup class="red">*</sup>
+                    <input id="YearOfBirth" type="text" name="Namsinh" class="form-control" placeholder="Năm sinh">
+                </div>
+
+                <div class="box-gioitinh mb-3 quantrong col-sm-6">
+                    <sup class="red">*</sup>
+                    <select id="Gender" name="Gioitinh" class="form-control">
+                        <option value="0">Chọn giới tính</option>
+                        <option value="1">Nam</option>
+                        <option value="2">Nữ</option>
+                        <option value="2">Khác</option>
+                    </select>
+                </div>
+                <div class="box-email mb-3 col-sm-12">
+
+                    <input id="Email" type="text" name="Email" class="khonginhoa form-control" placeholder="Nhập Email">
+                </div>
+                <div class="box-sodienthoai mb-3 col-sm-6 quantrong">
+                    <sup class="red">*</sup>
+                    <input id="Phone" type="text" name="Sodienthoai" class="khonginhoa form-control" placeholder="Nhập số điện thoại">
+                </div>
+                <div class="box-cmndcccd mb-3 col-sm-6 quantrong">
+                    <sup class="red">*</sup>
+                    <input id="CIC" type="text" name="CMNDCCCD" class="form-control" placeholder="Nhập CMND/CCCD">
+                </div>
+                <div class="col-sm-12 box-diachi box-thuongtru mb-3 row ">
+                    <label class="labeltitlt mb-3" for=""><b>Địa chỉ thường trú<sup class="red">*</sup></b></label>
+                    <div class="col-sm-4 box-tinh tinhtt mb-3">
+                        <select id="city" name="Tinhtt" class="js-example-basic-single form-control select2-hidden-accessible" data-select2-id="select2-data-1-cljg" tabindex="-1" aria-hidden="true">
+                            <option value="0">Chọn Tỉnh/Thành phố</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-4 box-quan quantt mb-3">
+                        <select id="district" name="Quantt" class="js-example-basic-single form-control select2-hidden-accessible" data-select2-id="select2-data-4-selc" tabindex="-1" aria-hidden="true">
+                            <option value="0">Chọn Quận/Huyện</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-4 box-xa xatt mb-3">
+                        <select id="ward" name="Xatt" class="js-example-basic-single form-control select2-hidden-accessible" data-select2-id="select2-data-7-la7o" tabindex="-1" aria-hidden="true">
+                            <option value="0">Chọn Xã/Phường</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-12 box-diachitext diachitt mb-3">
+                        <input id="AddressDetail" type="text" name="Diachitt" class="form-control" placeholder="Nhập địa chỉ ">
+                    </div>
+                </div>
+
+                <div class="col-sm-12 box-diachi box-hientai mb-3 row ">
+                    <label class="labeltitlt mb-3" for=""><b>Địa chỉ hiện tại<sup class="red">*</sup></b></label>
+                    <div class="col-sm-12">
+                        <div class="form-check mb-3">
+                            <input class="form-check-input " type="checkbox" id="flexCheckCheckedDisabled" onclick="clickgiongdc(this)">
+                            <label class="form-check-label" for="flexCheckCheckedDisabled">
+                                Giống địa chỉ thường trú
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 box-tinh tinhht mb-3">
+                        <select id="currentCity" name="Tinhht" class="js-example-basic-single form-control select2-hidden-accessible" data-select2-id="select2-data-10-fs01" tabindex="-1" aria-hidden="true">
+                            <option value="0">Chọn Tỉnh/Thành phố</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-4 box-quan quanht mb-3">
+                        <select id="currentDistrict" name="Quanht" class="js-example-basic-single form-control select2-hidden-accessible" data-select2-id="select2-data-13-iswt" tabindex="-1" aria-hidden="true">
+                            <option value="0">Chọn Quận/Huyện</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-4 box-xa xaht mb-3">
+                        <select id="currentWard" name="Xaht" class="js-example-basic-single form-control select2-hidden-accessible" data-select2-id="select2-data-16-jxk7" tabindex="-1" aria-hidden="true">
+                            <option value="0">Chọn Xã/Phường</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-12 box-diachitext diachiht mb-3">
+                        <input id="CurrentAddressDetail" type="text" name="Diachiht" class="form-control" placeholder="Nhập địa chỉ ">
+                    </div>
+                </div>
+
+
+
+                <div class="box-Dsnhommau mb-3">
+                    <label class="labeltitlt" for=""><b>Vui lòng chọn nhóm máu của quý vị</b></label>
+                    <div class="box-1radio">
+                        <input onchange="chonnhommau(this);" data-trangthai="1" "=" " name="Nhommau" type="radio" id="radio_nm3" value="3">
+                        <label for="radio_nm3">Nhóm máu O</label>
+                    </div> <div class="box-1radio">
+                        <input onchange="chonnhommau(this);" data-trangthai="1" "=" " name="Nhommau" type="radio" id="radio_nm1" value="1">
+                        <label for="radio_nm1">Nhóm máu A</label>
+                    </div> <div class="box-1radio">
+                        <input onchange="chonnhommau(this);" data-trangthai="1" "=" " name="Nhommau" type="radio" id="radio_nm4" value="4">
+                        <label for="radio_nm4">Nhóm máu B</label>
+                    </div> <div class="box-1radio">
+                        <input onchange="chonnhommau(this);" data-trangthai="1" "=" " name="Nhommau" type="radio" id="radio_nm2" value="2">
+                        <label for="radio_nm2">Nhóm máu AB</label>
+                    </div> <div class="box-1radio">
+                        <input onchange="chonnhommau(this);" data-trangthai="1" "=" " name="Nhommau" type="radio" id="radio_nm5" value="5" checked>
+                        <label for="radio_nm5"> Không biết</label>
+                    </div><div class="box-1radio">
+                        <input onchange="chonnhommau(this);" data-trangthai="1" "=" " name="Nhommau" type="radio" id="radio_nm5" value="6">
+                        <label for="radio_nm5"> Khác</label>
+                    </div>
+                </div>
+
+                <div class="box-submit">
+                    <button class="btn btn-success" type="button" onclick="register()">Đăng ký</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+<script>
+    // chọn địa chỉ thường chú
+    var citis = document.getElementById("city");
+    var districts = document.getElementById("district");
+    var wards = document.getElementById("ward");
+    var Parameter = {
+        url: "https://raw.githubusercontent.com/kenzouno1/DiaGioiHanhChinhVN/master/data.json",
+        method: "GET",
+        responseType: "application/json",
+    };
+    var promise = axios(Parameter);
+    promise.then(function (result) {
+        renderCity(result.data);
+    });
+
+    function renderCity(data) {
+        for (const x of data) {
+            citis.options[citis.options.length] = new Option(x.Name, x.Id);
+        }
+        citis.onchange = function () {
+            district.length = 1;
+            ward.length = 1;
+            if (this.value != "") {
+                const result = data.filter(n => n.Id === this.value);
+
+                for (const k of result[0].Districts) {
+                    district.options[district.options.length] = new Option(k.Name, k.Id);
+                }
+            }
+        };
+        district.onchange = function () {
+            ward.length = 1;
+            const dataCity = data.filter((n) => n.Id === citis.value);
+            if (this.value != "") {
+                const dataWards = dataCity[0].Districts.filter(n => n.Id === this.value)[0].Wards;
+
+                for (const w of dataWards) {
+                    wards.options[wards.options.length] = new Option(w.Name, w.Id);
+                }
+            }
+        };
+    }
+
+    // chọn địa chỉ hiện tại
+    var currentCitis = document.getElementById("currentCity");
+    var currentDistricts = document.getElementById("currentDistrict");
+    var currentWards = document.getElementById("currentWard");
+    var CurrentParameter = {
+        url: "https://raw.githubusercontent.com/kenzouno1/DiaGioiHanhChinhVN/master/data.json",
+        method: "GET",
+        responseType: "application/json",
+    };
+    var currentPromise = axios(CurrentParameter);
+    currentPromise.then(function (result) {
+        renderCurrentCity(result.data);
+    });
+
+    function renderCurrentCity(data) {
+        for (const x of data) {
+            currentCitis.options[currentCitis.options.length] = new Option(x.Name, x.Id);
+        }
+        currentCitis.onchange = function () {
+            currentDistrict.length = 1;
+            currentWard.length = 1;
+            if (this.value != "") {
+                const result = data.filter(n => n.Id === this.value);
+
+                for (const k of result[0].Districts) {
+                    currentDistrict.options[currentDistrict.options.length] = new Option(k.Name, k.Id);
+                }
+            }
+        };
+        currentDistrict.onchange = function () {
+            currentWard.length = 1;
+            const dataCity = data.filter((n) => n.Id === currentCitis.value);
+            if (this.value != "") {
+                const dataWards = dataCity[0].Districts.filter(n => n.Id === this.value)[0].Wards;
+
+                for (const w of dataWards) {
+                    currentWards.options[currentWards.options.length] = new Option(w.Name, w.Id);
+                }
+            }
+        };
+    }
+
+    // trượt tới phần tử có class là ...
+    function truottoi(maclass) {
+        $('html, body').animate({
+            scrollTop: $('.' + maclass).offset().top
+        }, 500);
+    }
+
+    // click giống địa chỉ thường chú
+    function clickgiongdc(elv) {
+        if ($(elv).prop('checked')) {
+            var event = new Event("change");
+            tinh = $('.tinhtt select').val();
+            quan = $('.quantt select').val();
+            xa = $('.xatt select').val();
+            $('.tinhht select').val(tinh);
+            document.getElementById("currentCity").dispatchEvent(event);
+            $('.quanht select').val(quan);
+            document.getElementById("currentDistrict").dispatchEvent(event);
+            $('.xaht select').val(xa);
+
+            $('.diachiht input').val($('.diachitt input').val());
+        }
+
+    }
+
+    const isVNPhoneMobile = /^(0|\+84)(\s|\.)?((3[2-9])|(5[689])|(7[06-9])|(8[1-689])|(9[0-46-9]))(\d)(\s|\.)?(\d{3})(\s|\.)?(\d{3})$/;
+    function register() {
+        $('.err1').removeClass('err1');
+        $('.err').remove();
+
+        if($('select[name=Workplace]').val() == 0) {
+            $('.workplace').addClass('err1').append('<div class="err" style="display: block; width: 100%; text-align: center; ">Vui lòng chọn Đơn vị/Khu đô thị</div>');
+            truottoi('workplace');
+            return;
+        }
+        if ($(".box-hoten input").val() == '') {
+            $('.box-hoten').addClass('err1').append('<div class="err">Vui lòng nhập họ tên</div>');
+            truottoi('box-hoten');
+            return;
+        }
+        if ($('.box-cmndcccd input').val() == '') {
+            $('.box-cmndcccd').addClass('err1').append('<div class="err">Vui lòng nhập CMND/CCCD</div>');
+            truottoi('box-cmndcccd');
+            return;
+        }
+        if ($('.box-namsinh input').val() == '') {
+            $('.box-namsinh').addClass('err1').append('<div class="err">Vui lòng nhập năm sinh</div>');
+            truottoi('box-namsinh');
+            return;
+        }
+        if ($('.box-gioitinh input').val() == '') {
+            $('.box-gioitinh').addClass('err1').append('<div class="err">Vui lòng nhập giới tính</div>');
+            truottoi('box-gioitinh');
+            return;
+        }
+        if (isVNPhoneMobile.test($(".box-sodienthoai input").val()) == false) {
+            $('.box-sodienthoai').addClass('err1').append('<div class="err">Vui lòng nhập số điện thoại</div>');
+            truottoi('box-sodienthoai');
+            return;
+        }
+        if ($('select[name=Tinhtt]').val() == 0) {
+            $('.tinhtt').addClass('err1').append('<div class="err" style="display: block; width: 100%; text-align: center; ">Vui lòng chọn Tỉnh/Thành phố</div>');
+            truottoi('tinhtt');
+            return;
+        }
+        if ($('select[name=Quantt]').val() == 0) {
+            $('.quantt').addClass('err1').append('<div class="err" style="display: block; width: 100%; text-align: center; ">Vui lòng chọn Quận/Huyện</div>');
+            truottoi('quantt');
+            return;
+        }
+        if ($('select[name=Xatt]').val() == 0) {
+            $('.xatt').addClass('err1').append('<div class="err" style="display: block; width: 100%; text-align: center; ">Vui lòng chọn Xã/Phường</div>');
+            truottoi('xatt');
+            return;
+        }
+        if ($('input[name=Diachitt]').val() == 0) {
+            $('.diachitt').addClass('err1').append('<div class="err" style="display: block; width: 100; text-align: center; ">Vui lòng nhập địa chỉ</div>');
+            truottoi('diachitt');
+            return;
+        }
+        if ($('select[name=Tinhht]').val() == 0) {
+            $('.tinhht').addClass('err1').append('<div class="err" style="display: block; width: 100%; text-align: center; ">Vui lòng chọn Tỉnh/Thành phố</div>');
+            truottoi('tinhht');
+            return;
+        }
+        if ($('select[name=Quanht]').val() == 0) {
+            $('.quanht').addClass('err1').append('<div class="err" style="display: block; width: 100%; text-align: center; ">Vui lòng chọn Quận/Huyện</div>');
+            truottoi('quanht');
+            return;
+        }
+        if ($('select[name=Xaht]').val() == 0) {
+            $('.xaht').addClass('err1').append('<div class="err" style="display: block; width: 100%; text-align: center; ">Vui lòng chọn Xã/Phường</div>');
+            truottoi('xaht');
+            return;
+        }
+        if ($('input[name=Diachiht]').val() == 0) {
+            $('.diachiht').addClass('err1').append('<div class="err" style="display: block; width: 100%; text-align: center; ">Vui lòng nhập địa chỉ</div>');
+            truottoi('diachiht');
+            return;
+        }
+         if ($("input[name=Nhommau]").length > 0) {
+            if ($("input[name=Nhommau]").is(':checked') == false) {
+                if ($("input[name=Nhommau]:checked").attr('data-trangthai') == 3) {
+                    $('.box-Dsnhommau').addClass('err1').append('<div class="err">Nhóm máu của quý vị tạm thời chưa thể tiếp nhận!</div>');
+                } else {
+                    $('.box-Dsnhommau').addClass('err1').append('<div class="err">Vui lòng chọn nhóm máu của quý vị!</div>');
+                }
+               truottoi('box-Dsnhommau');
+                return;
+            }
+        }
+
+        var model = new Object();
+        model.Workplace = $("#Workplace option:selected").text();
+        model.FullName = $("#FullName").val();
+        model.YearOfBirth = $("#YearOfBirth").val();
+        model.Gender = $("#Gender option:selected").text();
+        model.Email = $("#Email").val();
+        model.Phone = $("#Phone").val();
+        model.CIC = $("#CIC").val();
+        model.Address = $("#AddressDetail").val() + ", " + $("#ward option:selected").text() + ", " + $("#district option:selected").text() + ", " + $("#city option:selected").text();
+        if ($("#flexCheckCheckedDisabled").prop("checked")) {
+            model.CurrentAddress = model.Address;
+        } else {
+            model.CurrentAddress = $("#CurrentAddressDetail").val() + ", " + $("#currentWard option:selected").text() + ", " + $("#currentDistrict option:selected").text() + ", " + $("#currentCity option:selected").text();
+        }
+        model.BloodGroup = $("input[name='Nhommau']:checked").val();
+
+        if (model != null) {
+            $.ajax({
+                type: "POST",
+                url: "/Home/Register",
+                data: JSON.stringify(model),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    if (response != null) {
+                        alert("Đăng ký thành công!")
+                        location.reload();
+                    } else {
+                        alert("Kiểm tra lại dữ liệu");
+                    }
+                },
+                failure: function (response) {
+                    alert(response.responseText);
+                },
+                error: function (response) {
+                    alert(response.responseText);
+                }
+            });
+        }
+    }
+</script>

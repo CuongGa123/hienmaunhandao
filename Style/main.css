@@ -1,0 +1,537 @@
+﻿.banner {
+    background-image: url('/Images/banner-background.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 100%;
+    padding-top: 11.11%; /* 1/9 = 0.1111, tỷ lệ khung hình 1:9 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Cho phép định vị tuyệt đối các phần tử con */
+}
+
+.banner-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.boxlonhienmau {
+    border: 1px solid #ccc;
+    background-color: #fff;
+    padding: 15px 90px 0px 90px;
+    position: relative;
+    min-height: 900px;
+}
+
+.boxlonhienmau:before {
+    background-repeat: no-repeat;
+    content: "";
+    background-image: url(/hinhanh/nentrai.png);
+    position: absolute;
+    left: -264px;
+    width: 302px;
+    height: 700px;
+    background-size: contain;
+    z-index: 1;
+    top: 225px;
+}
+
+h1.box-title small {
+    margin-top: 5px;
+    display: block;
+    font-size: 18px;
+}
+
+.fbbox {
+    margin-top: 6px;
+}
+
+.boxlonhienmau:after {
+    content: "";
+    background-image: url(/hinhanh/nenphai.png);
+    position: absolute;
+    right: -264px;
+    width: 302px;
+    height: 600px;
+    background-size: contain;
+    z-index: 1;
+    top: 400px;
+    background-repeat: no-repeat;
+}
+
+body {
+    background-color: #fbe8df;
+    margin-top: 20px;
+}
+
+h1.box-title {
+    display: flex;
+    align-items: flex-start;
+}
+
+.box-hoantat.mb-3 p .red {
+    display: contents;
+}
+
+img.logotrai.logohea {
+    width: 112px;
+    margin-right: 25px;
+}
+
+.box-diachi .select2-container--default .select2-selection--single .select2-selection__arrow b {
+    border-color: #e49875 transparent transparent transparent;
+}
+
+.form-check-input:checked {
+    background-color: #ed242c;
+    border-color: #0d6efd;
+}
+
+.box-title span {
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.box-title span small {
+    /* color: #ccc; */
+    font-weight: 100;
+}
+
+.box-thongtinquangtrong h2.accordion-header button {
+    background-color: #fbe8df;
+    padding: 5px 20px;
+    border-radius: 16px !important;
+}
+
+.box-title span small:nth-child(1) {
+    font-weight: 500;
+}
+
+.box-thongtinquangtrong h2.accordion-header {
+    margin-bottom: 5px;
+}
+
+form#guihienmau {
+    margin: 30px 0;
+}
+
+.quantrong {
+    position: relative;
+}
+
+.quantrong sup.red {
+    color: red;
+    font-size: 17px;
+    position: absolute;
+    right: 19px;
+    top: 10px;
+}
+
+sup.red {
+    color: red;
+    font-size: 17px;
+}
+
+label.labeltitlt {
+    width: 100%;
+}
+
+.box-Dsnhommau.mb-3 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.box-Dsnhommau.mb-3 .box-1radio {
+    width: 49%;
+    display: flex;
+    align-items: center;
+}
+
+.box-1radio label {
+    display: flex;
+    width: 90%;
+}
+
+.box-1radio input {
+    width: 6%;
+}
+
+form#guihienmau select {
+    background-image: linear-gradient(45deg, transparent 50%, #e49875 60%), linear-gradient(135deg, #e49875 40%, transparent 50%) !important;
+    background-position: calc(100% - 25px) 14px, calc(100% - 20px) 14px, 100% 0;
+    background-size: 5px 5px, 5px 5px;
+    background-repeat: no-repeat;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 26px;
+    position: absolute;
+    top: 6px;
+    right: 1px;
+    width: 20px;
+}
+
+.select2-container .select2-selection--single {
+    box-sizing: border-box;
+    cursor: pointer;
+    display: block;
+    height: 38px;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+form#guihienmau input, form#guihienmau select, form#guihienmau .select2-container--default .select2-selection--single {
+    border: 1px solid #f6d8cb;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: #444;
+    line-height: 37px;
+}
+
+.box-tiemvaccine.mb-3 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.box-tiemvaccine.mb-3 .box-1radio {
+    width: 48%;
+    display: flex;
+    align-items: center;
+}
+
+.err {
+    color: red;
+    font-size: 12px;
+}
+
+.err1 {
+    border: 1px solid red;
+    padding: 10px;
+}
+
+.box input:disabled + label:before {
+    border-color: white;
+    background: white;
+}
+
+.box label:before {
+    content: "";
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: .2rem solid #ccc;
+}
+
+.box-chongiouutien .box {
+    width: 100%;
+    max-width: 400px;
+    margin: 2rem auto;
+    background: white;
+    border: 1px solid white;
+    border-radius: 3px;
+    text-align: left;
+}
+
+.box input:disabled + label {
+    background: #efefef;
+    color: rgba(0, 0, 0, 0.5);
+    cursor: not-allowed;
+}
+
+.box label:first-of-type {
+    border: 0;
+}
+
+.box input[type="radio"] {
+    display: none;
+}
+
+.box .active-label, .box label:focus, .box label:hover, .box label:active, .box input:checked + label {
+    color: #ee9013;
+}
+
+.box input:checked + label:before {
+    border-color: white;
+    border: none;
+    background: #ee9013;
+}
+
+.box-submit button {
+    background-color: #efa887;
+    border: 0;
+    text-align: center;
+    width: 135px;
+    border-radius: 14px;
+}
+
+.box-submit {
+    text-align: center;
+}
+
+.box-chongiouutien .box label {
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 1;
+    cursor: pointer;
+    display: block;
+    padding: 1rem 1rem 1rem 3rem;
+    position: relative;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    background: white;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-transition: all .15s ease;
+    transition: all .15s ease;
+    display: flex;
+    justify-content: space-between;
+}
+
+a.tieptucdangky.btn.btn-success {
+    border-radius: 15px;
+    background-color: #ea814e;
+    border: 0;
+}
+
+a.btn.btn-warning.suathongtindk {
+    color: #000;
+    background-color: #ffc107;
+    border-color: #ffc107;
+    border-radius: 15px;
+    border: 0;
+}
+
+.box-submit a.huydangkyhm {
+    background-color: #ffc107;
+    border: 0;
+    text-align: center;
+    width: 135px;
+    border-radius: 14px;
+}
+
+.box-thoigiandiadiem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 24px;
+    margin-top: 30px;
+    font-family: bevnb;
+}
+
+.box-1radio input {
+    width: 6%;
+    margin-top: 4px;
+    margin-right: 5px;
+}
+
+.box-footercopyright {
+    text-align: center;
+    margin-top: 15px;
+    color: #000;
+}
+
+.box-footercopyright a {
+    color: #000;
+    text-decoration: none;
+}
+
+i.icon-quy {
+    width: 29px !important;
+    height: 22px !important;
+    background-position: -285px -115px !important;
+    background-size: 700px 700px !important;
+    background-image: url(/hinhanh/icon-qpgnn.png) !important;
+}
+
+.app-icon i {
+    background-image: url(/hinhanh/icon-admin.png);
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+    vertical-align: middle;
+}
+
+.box-hoantat.mb-3 p b {
+    margin-right: 5px;
+}
+
+.app-slider-footer-copyright-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box-hoantat.mb-3 p {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+
+.footer {
+    background-color: #f8f9fa;
+    padding: 10px;
+    text-align: center;
+    margin-top: 20px;
+}
+.noidung {
+    padding: 20px;
+}
+
+.thongtindangky {
+    text-align: center;
+    padding: 10px;
+    font-size: 20px;
+    color: red;
+}
+
+@media screen and (max-width:1365px) {
+    .boxlonhienmau:before {
+        display: none;
+    }
+
+    .boxlonhienmau:after {
+        display: none;
+    }
+}
+
+@media screen and (max-width:736px) {
+    .boxlonhienmau {
+        border: 1px solid #ccc;
+        background-color: #fff;
+        padding: 10px 15px;
+        position: relative;
+        min-height: 950px;
+        overflow-y: scroll;
+    }
+
+    h1.box-title small {
+        margin-top: 5px;
+        display: block;
+        font-size: 16px;
+    }
+
+    .box-title span {
+        font-size: 20px;
+        font-weight: bold;
+    }
+}
+
+@media screen and (max-width:567px) {
+    .fbbox {
+        text-align: center;
+    }
+
+    h1.box-title {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .box-title span {
+        font-size: 18px;
+        font-weight: bold;
+        margin-top: 10px;
+    }
+
+    .box-tiemvaccine.mb-3 .box-1radio {
+        width: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    .box-Dsnhommau.mb-3 .box-1radio {
+        width: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    body {
+        margin-top: 5px;
+    }
+}
+
+@media screen and (max-width:320px) {
+    label.labeltitlt {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .boxlonhienmau {
+        padding: 10px 5px;
+    }
+
+    h1.box-title small {
+        margin-top: 5px;
+        display: block;
+        font-size: 15px;
+    }
+
+    .box-title span {
+        font-size: 16px;
+        font-weight: bold;
+        margin-top: 10px;
+    }
+
+    .box-footercopyright a {
+        color: #000;
+        text-decoration: none;
+        font-size: 15px;
+    }
+}
+
+@font-face {
+    font-family: 'bevnb';
+    src: url('fonts/bevietnam/BeVietnam-Bold.ttf'); /* IE9 Compat Modes */
+    src: url('fonts/bevietnam/BeVietnam-Bold.ttf') format('truetype'), /* Safari, Android, iOS */
+}
+
+@font-face {
+    font-family: 'bevnsemib';
+    src: url('fonts/bevietnam/BeVietnam-SemiBold.ttf');
+}
+
+@font-face {
+    font-family: 'bevnexb';
+    src: url('fonts/bevietnam/BeVietnam-ExtraBold.ttf');
+}
+
+@font-face {
+    font-family: 'bevnm';
+    src: url('fonts/bevietnam/BeVietnam-Medium.ttf');
+}
+
+@font-face {
+    font-family: 'bevnt';
+    src: url('fonts/bevietnam/BeVietnam-Thin.ttf');
+}
+
+@font-face {
+    font-family: 'bevnr';
+    src: url('fonts/bevietnam/BeVietnam-Regular.ttf');
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
